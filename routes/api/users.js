@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/register', async (req, res, next) => {});
+const ctrl = require('../../controllers/users');
+const { auth } = require('../../middlewares');
 
-router.post('/login', async (req, res, next) => {});
+router.post('/register', ctrl.register);
 
-router.post('/logout', async (req, res, next) => {});
+router.post('/login', ctrl.login);
 
-router.get('/current', async (req, res, next) => {});
+router.post('/logout', auth, ctrl.logout);
+
+router.get('/current', auth, ctrl.current);
 
 module.exports = router;
