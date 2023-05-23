@@ -1,7 +1,9 @@
-const HttpError = (status, message) => {
-  const error = new Error(message);
-  error.status = status;
-  return error;
-};
+const httpError = require('./httpError');
+const ctrlWrapper = require('./ctrlWrapper');
+const handleMongooseError = require('./handleMongooseError');
 
-module.exports = HttpError;
+module.exports = {
+  httpError,
+  ctrlWrapper,
+  handleMongooseError,
+};

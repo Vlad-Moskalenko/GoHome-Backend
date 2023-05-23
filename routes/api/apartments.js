@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {});
+const ctrl = require('../../controllers/apartments');
 
-router.get('/:apartmentId', async (req, res) => {});
+router.get('/', ctrl.getApartments);
 
-router.patch('/:id/reviews', async (req, res) => {});
+router.get('/:id', ctrl.getApartmentById);
+
+router.patch('/:id/reviews', ctrl.addReview);
 
 module.exports = router;

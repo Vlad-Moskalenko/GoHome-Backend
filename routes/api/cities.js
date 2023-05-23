@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {});
+const ctrl = require('../../controllers/cities');
+
+router.get('/', ctrl.getCities);
 
 module.exports = router;
